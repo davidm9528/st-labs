@@ -52,18 +52,18 @@ public class SimpleBankingAppTest {
 	// this test method (test case) verifies if the Withdraw feature works properly
 	public static void testWithdrawals() {
 		// Setup phase
-				double balanceBefore = mainApp.getBalance("5495-1234"); 
-				double WithdrawAmount = 50.21;
+		double balanceBefore = mainApp.getBalance("5495-1234"); 
+		double withdrawAmount = 50;
 				
 				// Exercise phase
-				mainApp.addTransaction("5495-1234", WithdrawAmount);
-				double balanceAfter = mainApp.getBalance("5495-1234");
-				assert balanceBefore - WithdrawAmount == balanceAfter;
-				System.out.println("testWithdrawl: TC1 passed.");
+		mainApp.addTransaction("5495-1234", withdrawAmount);
+		double balanceAfter = mainApp.getBalance("5495-1234");
+		assert balanceBefore - withdrawAmount == balanceAfter;
+		System.out.println("testWithdrawl: TC1 passed.");
 				
 				// tear-down: put the system state back in where it was
 				// read more about the tear-down phase of test cases: http://xunitpatterns.com/Four%20Phase%20Test.html
-				mainApp.addTransaction("5495-1234", -WithdrawAmount);
+		mainApp.addTransaction("5495-1234", -withdrawAmount);
 	}
 	
 	
